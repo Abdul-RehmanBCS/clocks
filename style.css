@@ -1,0 +1,70 @@
+#clockContainer{
+    position: relative;
+    margin: auto;
+    width: 40vw;
+    height: 40vw;
+    background: url(clock.png) no-repeat;
+    background-size: 100%;
+}
+#hour,#min,#sec{
+    position: absolute;
+    background: #000;
+    border-radius: 10px;
+    transform-origin: bottom;
+    z-index: 10;
+}
+#hour{
+    width: 1.5%;
+    height: 29.2%;
+    top: 21%;
+    left: 49.2%;
+}        
+#min{
+    width: 1%;
+    height: 30%;
+    top: 20%;
+    left: 49.2%;
+}
+#sec{
+    width: 1%;
+    height: 40%;
+    top: 10%;
+    left: 49.2%;
+}
+.digital{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    position: absolute;
+    background: linear-gradient(45deg,#494554,#cbbef6);
+    height: 10%;
+    width: 33%;
+    top: 60%;
+    left: 34%;
+    font-size: 2.8vw;
+}
+#colon{
+    animation: blink 1s steps(1) infinite;
+}
+@keyframes blink {
+    50%{
+        opacity: 0;
+    }
+}
+.dayDate{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    position: absolute;
+    background: linear-gradient(45deg, #514c69, #5a4e7a);
+    height: 5%;
+    width: 22%;
+    top: 71%;
+    left: 40%;
+    font-size: 1vw;
+}
+#month,#date{
+    margin-left: 3px;
+}

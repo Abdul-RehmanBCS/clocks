@@ -1,0 +1,31 @@
+let hour = document.querySelector("#hour");
+let min = document.querySelector("#min");
+let sec = document.querySelector("#sec");
+let dHour = document.querySelector("#dHour");
+let dMin = document.querySelector("#dMin");
+let day = document.querySelector("#day");
+let date = document.querySelector("#date");
+let month = document.querySelector("#month");
+const daysOfWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+const months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+setInterval(()=>{
+    let d = new Date();
+    hTime = d.getHours();
+    mTime = d.getMinutes();
+    sTime = d.getSeconds();
+    getDate  = d.getDate();
+    getDay = d.getDay();
+    getMonth = d.getMonth();
+    hRotation = 30*hTime + mTime/2;
+    mRotation = 6*mTime;
+    sRotation = 6*sTime;
+    hour.style.transform = `rotate(${hRotation}deg)`;
+    min.style.transform = `rotate(${mRotation}deg)`;
+    sec.style.transform = `rotate(${sRotation}deg)`;
+
+    dHour.innerHTML = (hTime<10?"0":"") + hTime;
+    dMin.innerHTML = (mTime<10?"0":"")+mTime;
+    date.innerHTML = getDate;
+    day.innerHTML = `${daysOfWeek[getDay]},`;
+    month.innerHTML = months[getMonth];
+},1000)
